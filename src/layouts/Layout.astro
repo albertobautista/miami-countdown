@@ -1,0 +1,55 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import "@fontsource/space-mono";
+import LightsBackground from "@/components/LightsBackground.astro";
+import NoiseBackground from "@/components/NoiseBackground.astro";
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body
+    class="overflow-x-hidden selection:bg-primary selection:text-secondary [&_:focus-visible]:outline-none [&_:focus-visible]:ring-2 [&_:focus-visible]:ring-primary"
+  >
+    <NoiseBackground />
+
+    <LightsBackground />
+
+    <slot />
+    <style is:global>
+      :root {
+        --color-primary: #ddd;
+        --color-secondary: #333;
+        --color-accent: #b4cd02;
+        --color-accent-rgb: 213, 255, 0;
+
+        --background-color: #141800;
+        --background-twitch: var(--color-twitch-ice);
+      }
+      @font-face {
+        font-family: "Space Mono", cursive;
+        font-display: swap;
+      }
+      html {
+        background: var(--background-color);
+        scrollbar-gutter: stable;
+      }
+    </style>
+  </body>
+</html>
