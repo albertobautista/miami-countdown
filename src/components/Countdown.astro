@@ -5,17 +5,17 @@ import Typography from "./Typography.astro";
 ---
 
 <section
-  class="flex items-center justify-center max-h-screen h-screen flex-col place-items-center gap-y-14"
+  class="flex items-center justify-center h-screen overflow-hidden flex-col place-items-center"
   aria-label="cuenta atrás"
 >
   <Typography
     as="h3"
     color="white"
-    class:list={"text-balance text-center font-atomic text-2xl md:text-3xl"}
+    class:list={"text-balance text-center font-atomic text-5xl md:text-5xl"}
     >Para el 🛳️ faltan...
   </Typography>
   <div
-    class="grid w-full select-none grid-cols-3 flex-col items-center justify-center gap-y-20 uppercase text-primary md:gap-x-6 md:gap-y-11"
+    class="grid w-full select-none grid-cols-3 flex-col items-center justify-center gap-y-12 uppercase text-primary md:gap-x-6 md:gap-y-11"
     data-date={EVENT_TIMESTAMP}
     role="timer"
   >
@@ -23,9 +23,9 @@ import Typography from "./Typography.astro";
       dateType="Días"
       attribute={{ "data-days": "" }}
       position="col-span-3"
-      className="text-8xl text-accent md:text-[20rem]"
+      className="text-[11rem] text-accent md:text-[20rem]"
       wrapperClassName="my-8 "
-      height={"h-[6rem] md:h-[20rem]"}
+      height={"h-[13rem] md:h-[22rem] md:h-[20rem]"}
       max={129}
     />
     <Date
