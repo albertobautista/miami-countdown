@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        atomic: ["Space Mono", "monospace"],
+        atomic: ["Caveat Brush", "monospace"],
       },
       colors: {
         primary: "var(--color-primary)",
