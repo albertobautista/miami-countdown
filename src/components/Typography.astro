@@ -3,7 +3,7 @@ import type { HTMLTag, Polymorphic } from "astro/types";
 
 type Props<Tag extends HTMLTag> = Polymorphic<{
   as: Tag;
-  variant: keyof typeof variantClasses;
+  variant?: keyof typeof variantClasses;
   color: keyof typeof colorClasses;
 }>;
 
