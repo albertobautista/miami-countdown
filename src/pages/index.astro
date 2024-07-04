@@ -1,10 +1,39 @@
 ---
+// import CarouselsBanner from "@/components/CarouselsBanner";
+import BouncingImage from "@/components/BouncingImage";
 import Countdown from "../components/Countdown.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Crucero" description="Crucerito">
-  <main>
+<Layout
+  title="Crucero - Miami 2024"
+  description="Crucero por diferentes paises de centro américa"
+>
+  <main class="relative w-full h-screen overflow-hidden">
     <Countdown />
+    <BouncingImage
+      imgSrc="/img/faces/payan.png"
+      leftPosition={0}
+      topPosition={0}
+      client:load
+    />
+    <BouncingImage
+      imgSrc="/img/faces/alan.png"
+      leftPosition={0}
+      topPosition={100}
+      client:load
+    />
+    <BouncingImage
+      imgSrc="/img/faces/mariel.png"
+      leftPosition={0}
+      topPosition={200}
+      client:load
+    />
+    <BouncingImage
+      imgSrc="/img/faces/alberto.png"
+      leftPosition={0}
+      topPosition={300}
+      client:load
+    />
   </main>
 </Layout>
