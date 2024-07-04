@@ -1,19 +1,33 @@
+import { h } from "preact";
 import { useEffect, useState } from "preact/hooks";
+
+interface BouncingImageProps {
+  topPosition: number;
+  leftPosition: number;
+  imgSrc: string;
+}
+
+interface Position {
+  top: number;
+  left: number;
+}
+
+interface Velocity {
+  top: number;
+  left: number;
+}
 
 const BouncingImage = ({
   topPosition,
   leftPosition,
   imgSrc,
-}: {
-  topPosition: number;
-  leftPosition: number;
-  imgSrc: string;
-}) => {
-  const [position, setPosition] = useState({
+}: BouncingImageProps) => {
+  const [position, setPosition] = useState<Position>({
     top: topPosition,
     left: leftPosition,
   });
-  const [velocity, setVelocity] = useState({ top: 2, left: 2 });
+  const [velocity, setVelocity] = useState<Velocity>({ top: 2, left: 2 });
+  const [rotation, setRotation] = useState<number>(0);
 
   useEffect(() => {
     const moveImage = () => {
@@ -46,6 +60,8 @@ const BouncingImage = ({
 
         return { top: newTop, left: newLeft };
       });
+
+      setRotation((prevRotation) => (prevRotation + 1) % 360);
     };
 
     const interval = setInterval(moveImage, 7);
@@ -55,7 +71,11 @@ const BouncingImage = ({
 
   return (
     <div
-      style={{ top: `${position.top}px`, left: `${position.left}px` }}
+      style={{
+        top: `${position.top}px`,
+        left: `${position.left}px`,
+        transform: `rotate(${rotation}deg)`,
+      }}
       className="absolute w-24 h-24"
     >
       <img src={imgSrc} alt="Bouncing" className="object-cover w-full h-full" />
