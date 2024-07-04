@@ -18,17 +18,28 @@ const BouncingImage = ({
   useEffect(() => {
     const moveImage = () => {
       setPosition((prevPosition) => {
-        const newTop = prevPosition.top + velocity.top;
-        const newLeft = prevPosition.left + velocity.left;
+        let newTop = prevPosition.top + velocity.top;
+        let newLeft = prevPosition.left + velocity.left;
+
+        const imageHeight = 100; // Assuming image height is 100px
+        const imageWidth = 100; // Assuming image width is 100px
 
         let newVelocity = { ...velocity };
-        if (newTop <= 0 || newTop >= window.innerHeight - 100) {
-          // Assuming image height is 100px
-          newVelocity.top = -newVelocity.top;
+
+        if (newTop <= 0) {
+          newTop = 0;
+          newVelocity.top = Math.abs(newVelocity.top);
+        } else if (newTop >= window.innerHeight - imageHeight) {
+          newTop = window.innerHeight - imageHeight;
+          newVelocity.top = -Math.abs(newVelocity.top);
         }
-        if (newLeft <= 0 || newLeft >= window.innerWidth - 100) {
-          // Assuming image width is 100px
-          newVelocity.left = -newVelocity.left;
+
+        if (newLeft <= 0) {
+          newLeft = 0;
+          newVelocity.left = Math.abs(newVelocity.left);
+        } else if (newLeft >= window.innerWidth - imageWidth) {
+          newLeft = window.innerWidth - imageWidth;
+          newVelocity.left = -Math.abs(newVelocity.left);
         }
 
         setVelocity(newVelocity);
