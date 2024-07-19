@@ -3,6 +3,7 @@ import { ViewTransitions } from "astro:transitions";
 import "@fontsource/caveat-brush";
 import LightsBackground from "@/components/LightsBackground.astro";
 import NoiseBackground from "@/components/NoiseBackground.astro";
+import SEO from "@/components/SEO.astro";
 interface Props {
   title: string;
   description: string;
@@ -14,14 +15,7 @@ const { title, description } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
-
-    <title>{title}</title>
+    <SEO description={description} title={title} />
     <ViewTransitions />
   </head>
   <body
@@ -36,11 +30,10 @@ const { title, description } = Astro.props;
       :root {
         --color-primary: #ddd;
         --color-secondary: #333;
-        --color-accent: #b4cd02;
+        --color-accent: #f07406;
         --color-accent-rgb: 213, 255, 0;
 
         --background-color: #141800;
-        --background-twitch: var(--color-twitch-ice);
       }
       @font-face {
         font-family: "Caveat Brush", cursive;

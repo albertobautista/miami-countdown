@@ -1,0 +1,45 @@
+---
+import type { Preload } from "@/types/Preload";
+
+interface Props {
+  title: string;
+  description: string;
+  preload?: Array<Preload>;
+  canonical?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description,
+  preload,
+  canonical,
+  image = "https://cdn.lavelada.dev/og.jpg",
+} = Astro.props as Props;
+---
+
+<title>{title}</title>
+<meta charset="UTF-8" />
+<meta name="description" content={description} />
+
+<meta name="viewport" content="width=device-width" />
+<meta name="theme-color" content="#d5ff00" />
+
+<meta name="keywords" content="miami, crucero, bahamas, viaje, amigos" />
+
+<meta name="og:image" content={new URL(image, Astro.url)} />
+<meta name="og:title" content={title} />
+<meta name="og:description" content={description} />
+<meta name="og:url" content={Astro.url} />
+<meta name="og:site_name" content="Crucero a Miami" />
+<meta name="og:type" content="website" />
+<meta name="og:locale" content="es_ES" />
+
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/img/icons/apple-touch-icon.png" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="msapplication-config" content="/browserconfig.xml" />

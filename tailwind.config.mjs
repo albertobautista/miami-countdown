@@ -10,7 +10,7 @@ export default {
         atomic: ["Caveat Brush", "monospace"],
       },
       colors: {
-        primary: "#f07406",
+        primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",
         accent: "var(--color-accent)",
         twitch: "var(--color-twitch)",
