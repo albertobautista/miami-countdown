@@ -1,5 +1,5 @@
 ---
-export const EVENT_TIMESTAMP = 1738270800000 as const;
+export const EVENT_TIMESTAMP = 1738291200000 as const;
 import Date from "./Date.astro";
 import Typography from "./Typography.astro";
 ---
@@ -85,6 +85,8 @@ import Typography from "./Typography.astro";
     const timestamp = Number($countdown?.getAttribute("data-date") ?? 0);
     const countdown = createCountdown(timestamp, {
       onTick({ days, hours, minutes, seconds }) {
+        // console.log("ALBErto", { days, hours, minutes, seconds });
+
         if (
           $days.firstDigit instanceof HTMLElement &&
           $days.secondDigit instanceof HTMLElement &&
