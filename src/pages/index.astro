@@ -9,7 +9,7 @@ const event = orderedEvents[0];
 
 <Layout title="Cumple - 2025" description="Cumpleaños - 2025" event={event}>
   <main class="relative w-full h-screen overflow-hidden">
-    <Countdown timestamp={event.timestamp} />
+    <Countdown timestamp={event.timestamp} colorClass={event.colorClass} />
 
     <!-- <Countdown /> -->
     <BouncingImage
