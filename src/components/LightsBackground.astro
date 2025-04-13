@@ -3,11 +3,10 @@ interface Props {
   backgroundImage: string;
 }
 const { backgroundImage = "/img/bg/akron.jpg" } = Astro.props;
-console.log("Background image:", backgroundImage);
 ---
 
 <div
   class="fixed -z-50 h-full w-full bg-no-repeat opacity-50 blur-[2px] md:opacity-50 lights-background"
-  style={`background-image: url(${backgroundImage}); background-size: cover;`}
+  style={`background-image: url(${backgroundImage}); background-size: cover; background-position: center;`}
 >
 </div>

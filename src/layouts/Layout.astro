@@ -11,7 +11,8 @@ export interface EventData {
   title: string;
   timestamp: number;
   description: string;
-  backgroundImage?: string;
+  backgroundImage: string;
+  colorClass: string;
 }
 
 const {
@@ -20,6 +21,8 @@ const {
     description: "",
     id: "",
     timestamp: 0,
+    backgroundImage: "",
+    colorClass: "text-red-200",
   },
 }: { event?: EventData } = Astro.props;
 ---

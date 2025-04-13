@@ -21,7 +21,7 @@ if (!event) {
 
 <Layout title={event.title} description={event.description} event={event}>
   <main class="relative w-full h-screen overflow-hidden">
-    <Countdown timestamp={event.timestamp} />
+    <Countdown timestamp={event.timestamp} colorClass={event.colorClass} />
     <BouncingImage
       imgSrc="/img/faces/alberto.png"
       leftPosition={50}

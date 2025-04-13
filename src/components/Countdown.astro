@@ -1,11 +1,11 @@
 ---
 import Date from "./Date.astro";
-import Typography from "./Typography.astro";
 
 interface Props {
   timestamp: number;
+  colorClass: string;
 }
-const { timestamp } = Astro.props;
+const { timestamp, colorClass } = Astro.props;
 ---
 
 <section
@@ -21,7 +21,7 @@ const { timestamp } = Astro.props;
       dateType="Días"
       attribute={{ "data-days": "" }}
       position="col-span-3"
-      className="text-[11rem] text-accent md:text-[20rem]"
+      className={`text-[11rem] ${colorClass} md:text-[20rem]`}
       wrapperClassName="my-8 "
       height={"h-[13rem] md:h-[22rem] md:h-[20rem]"}
       max={129}
@@ -30,7 +30,7 @@ const { timestamp } = Astro.props;
       wrapperClassName="my-8"
       dateType="Horas"
       attribute={{ "data-hours": "" }}
-      className="text-7xl text-accent"
+      className={`text-7xl ${colorClass}`}
       height={"h-[4rem]"}
       max={23}
     />
@@ -39,7 +39,7 @@ const { timestamp } = Astro.props;
       wrapperClassName="my-8"
       dateType="Minutos"
       attribute={{ "data-minutes": "" }}
-      className="text-7xl text-accent"
+      className={`text-7xl ${colorClass}`}
       height={"h-[4rem]"}
       max={59}
     />
@@ -48,7 +48,7 @@ const { timestamp } = Astro.props;
       wrapperClassName="my-8"
       dateType="Segundos"
       attribute={{ "data-seconds": "" }}
-      className="text-7xl text-accent"
+      className={`text-7xl ${colorClass}`}
       height={"h-[4rem]"}
       max={59}
     />
