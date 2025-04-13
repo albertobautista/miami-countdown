@@ -1,22 +1,20 @@
 ---
-export const EVENT_TIMESTAMP = 1765087200000 as const;
 import Date from "./Date.astro";
 import Typography from "./Typography.astro";
+
+interface Props {
+  timestamp: number;
+}
+const { timestamp } = Astro.props;
 ---
 
 <section
-  class="flex p-6 items-center justify-center flex-col place-items-center md:gap-y-2"
+  class="flex mt-16 md:mt-0 p-6 items-center justify-center flex-col place-items-center md:gap-y-2"
   aria-label="cuenta atrás"
 >
-  <Typography
-    as="h3"
-    color="white"
-    class:list={"text-balance text-center font-atomic text-5xl md:text-5xl"}
-    >🎂🎁🥳
-  </Typography>
   <div
     class="grid w-full select-none grid-cols-3 flex-col items-center justify-center gap-y-12 uppercase text-primary md:gap-x-6 md:gap-y-11"
-    data-date={EVENT_TIMESTAMP}
+    data-date={timestamp}
     role="timer"
   >
     <Date

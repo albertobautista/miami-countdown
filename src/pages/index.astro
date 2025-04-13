@@ -1,13 +1,17 @@
 ---
-// import CarouselsBanner from "@/components/CarouselsBanner";
 import BouncingImage from "@/components/BouncingImage";
 import Countdown from "../components/Countdown.astro";
 import Layout from "../layouts/Layout.astro";
+import { orderedEvents } from "@/data/events";
+
+const event = orderedEvents[0];
 ---
 
-<Layout title="Cumple - 2025" description="Cumpleaños - 2025">
+<Layout title="Cumple - 2025" description="Cumpleaños - 2025" event={event}>
   <main class="relative w-full h-screen overflow-hidden">
-    <Countdown />
+    <Countdown timestamp={event.timestamp} />
+
+    <!-- <Countdown /> -->
     <BouncingImage
       imgSrc="/img/faces/alberto.png"
       leftPosition={50}

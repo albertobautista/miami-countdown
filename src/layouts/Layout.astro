@@ -4,28 +4,52 @@ import "@fontsource/caveat-brush";
 import LightsBackground from "@/components/LightsBackground.astro";
 import NoiseBackground from "@/components/NoiseBackground.astro";
 import SEO from "@/components/SEO.astro";
-interface Props {
+import EventSelector from "@/components/EventSelector.astro";
+
+export interface EventData {
+  id: string;
   title: string;
+  timestamp: number;
   description: string;
+  backgroundImage?: string;
 }
 
-const { title, description } = Astro.props;
+const {
+  event = {
+    title: "",
+    description: "",
+    id: "",
+    timestamp: 0,
+  },
+}: { event?: EventData } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <SEO description={description} title={title} />
+    <SEO
+      title={event.title || "Fiesta 2025"}
+      description={event.description || "¡Te esperamos!"}
+    />
     <ViewTransitions />
   </head>
   <body
     class="overflow-x-hidden selection:bg-primary selection:text-secondary [&_:focus-visible]:outline-none [&_:focus-visible]:ring-2 [&_:focus-visible]:ring-primary"
   >
+    <EventSelector />
+
     <NoiseBackground />
 
-    <LightsBackground />
+    {
+      event.backgroundImage && (
+        <LightsBackground
+          backgroundImage={event.backgroundImage || "/img/bg/akron.jpg"}
+        />
+      )
+    }
 
     <slot />
+
     <style is:global>
       :root {
         --color-primary: #ddd;
@@ -35,10 +59,12 @@ const { title, description } = Astro.props;
 
         --background-color: #141800;
       }
+
       @font-face {
         font-family: "Caveat Brush", cursive;
         font-display: swap;
       }
+
       html {
         background: var(--background-color);
         scrollbar-gutter: stable;

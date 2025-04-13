@@ -1,0 +1,45 @@
+---
+import { orderedEvents } from "@/data/events";
+import Layout from "@/layouts/Layout.astro";
+import Countdown from "@/components/Countdown.astro";
+import BouncingImage from "@/components/BouncingImage";
+
+const { id } = Astro.params;
+const event = orderedEvents.find((e) => e.id === id);
+
+export async function getStaticPaths() {
+  return orderedEvents.map((event) => ({
+    params: { id: event.id },
+    props: { event },
+  }));
+}
+
+if (!event) {
+  throw new Error("Evento no encontrado");
+}
+---
+
+<Layout title={event.title} description={event.description} event={event}>
+  <main class="relative w-full h-screen overflow-hidden">
+    <Countdown timestamp={event.timestamp} />
+    <BouncingImage
+      imgSrc="/img/faces/alberto.png"
+      leftPosition={50}
+      topPosition={50}
+      client:load
+    />
+    <BouncingImage
+      imgSrc="/img/faces/alberto2.png"
+      leftPosition={300}
+      topPosition={300}
+      client:load
+    />
+  </main>
+
+  <style is:global>
+    .lights-background {
+      background: url({event.backgroundImage});
+      background-size: cover;
+    }
+  </style>
+</Layout>
