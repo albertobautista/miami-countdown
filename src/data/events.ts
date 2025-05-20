@@ -17,14 +17,6 @@ const events: EventData[] = [
     backgroundImage: "/img/bg/sofi.webp",
     colorClass: "text-green-600",
   },
-  {
-    id: "final-kings-league",
-    title: "Final Kings League",
-    description: "Final Kings League - 2025",
-    timestamp: 1747530000000,
-    backgroundImage: "/img/bg/kings.webp",
-    colorClass: "text-yellow-500",
-  },
 ];
 
 export const sortEventsByTimestamp = (
