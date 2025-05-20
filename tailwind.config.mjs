@@ -1,4 +1,4 @@
-import animations from "@midudev/tailwind-animations";
+// import animations from "@midudev/tailwind-animations";
 import defaultTheme from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
@@ -19,7 +19,7 @@ export default {
     },
   },
   plugins: [
-    animations,
+    // animations,
     function ({ addVariant }) {
       addVariant("any-hover", "@media (any-hover: hover) { &:hover }");
       addVariant("mobile", "@media (any-hover: none) { & }");
