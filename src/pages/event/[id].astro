@@ -17,23 +17,28 @@ export async function getStaticPaths() {
 if (!event) {
   throw new Error("Evento no encontrado");
 }
+const DEFAULT_POSITION = 50;
 ---
 
 <Layout title={event.title} description={event.description} event={event}>
   <main class="relative w-full h-screen overflow-hidden">
     <Countdown timestamp={event.timestamp} colorClass={event.colorClass} />
-    <BouncingImage
-      imgSrc="/img/faces/alberto.png"
-      leftPosition={50}
-      topPosition={50}
-      client:load
-    />
-    <BouncingImage
-      imgSrc="/img/faces/alberto2.png"
-      leftPosition={300}
-      topPosition={300}
-      client:load
-    />
+    {
+      event.people &&
+        event.people.length > 0 &&
+        event.people.map((person, index) => (
+          <BouncingImage
+            imgSrc={`/img/faces/${person}.png`}
+            leftPosition={
+              DEFAULT_POSITION * (index % 2 === 0 ? index + 1 : index + 5)
+            }
+            topPosition={
+              DEFAULT_POSITION * (index % 2 === 0 ? index + 1 : index + 5)
+            }
+            client:load
+          />
+        ))
+    }
   </main>
 
   <style is:global>

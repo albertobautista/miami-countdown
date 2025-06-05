@@ -8,6 +8,7 @@ const events: EventData[] = [
     timestamp: 1765087200000,
     backgroundImage: "/img/bg/akron.webp",
     colorClass: "text-red-600",
+    people: ["alberto"],
   },
   {
     id: "los-angeles",
@@ -16,6 +17,7 @@ const events: EventData[] = [
     timestamp: 1749949200000,
     backgroundImage: "/img/bg/sofi.webp",
     colorClass: "text-green-600",
+    people: ["alberto", "desiree", "arturo"],
   },
 ];
 
