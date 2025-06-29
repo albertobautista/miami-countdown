@@ -10,15 +10,6 @@ const events: EventData[] = [
     colorClass: "text-red-600",
     people: ["alberto"],
   },
-  {
-    id: "los-angeles",
-    title: "Los Angeles 🇲🇽",
-    description: "Los Angeles 2025",
-    timestamp: 1749949200000,
-    backgroundImage: "/img/bg/sofi.webp",
-    colorClass: "text-green-600",
-    people: ["alberto", "desiree", "arturo"],
-  },
 ];
 
 export const sortEventsByTimestamp = (
