@@ -10,6 +10,15 @@ const events: EventData[] = [
     colorClass: "text-red-600",
     people: ["alberto"],
   },
+  {
+    id: "Euro-trip",
+    title: "Vacations",
+    description: "Cumpleaños - 2025",
+    timestamp: 1763430900000,
+    backgroundImage: "/img/bg/munich.webp",
+    colorClass: "text-yellow-600",
+    people: ["alberto"],
+  },
 ];
 
 export const sortEventsByTimestamp = (
