@@ -19,6 +19,15 @@ const events: EventData[] = [
     colorClass: "text-yellow-600",
     people: ["alberto"],
   },
+  {
+    id: "Euro-trip-alone",
+    title: "Secret",
+    description: "Secret",
+    timestamp: 1771243200000,
+    backgroundImage: "/img/bg/sevilla.webp",
+    colorClass: "text-green-600",
+    people: ["alberto"],
+  },
 ];
 
 export const sortEventsByTimestamp = (
