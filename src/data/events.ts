@@ -35,7 +35,7 @@ const events: EventData[] = [
     timestamp: 1786953600000,
     backgroundImage: "/img/bg/magic-kingdom.webp",
     colorClass: "text-blue-600",
-    people: ["alberto", "desiree", "arturo"],
+    people: ["alberto", "desiree", "arturo", "jeni"],
   },
   {
     id: "world-cup-2026",
@@ -44,6 +44,15 @@ const events: EventData[] = [
     timestamp: 1781157600000,
     backgroundImage: "/img/bg/world-cup.webp",
     colorClass: "text-orange-600",
+    people: ["alberto"],
+  },
+  {
+    id: "alaska-cruise-2026",
+    title: "Alaska Cruise 2026",
+    description: "Alaska Cruise 2026",
+    timestamp: 1788990180000,
+    backgroundImage: "/img/bg/alaska.webp",
+    colorClass: "text-cyan-400",
     people: ["alberto"],
   },
 ];
