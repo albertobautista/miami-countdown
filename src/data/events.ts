@@ -53,16 +53,16 @@ const events: EventData[] = [
     timestamp: 1788990180000,
     backgroundImage: "/img/bg/alaska.webp",
     colorClass: "text-cyan-400",
-    people: ["alberto"],
+    people: ["alberto", "mariel", "payan", "alan"],
   },
 ];
 
 export const sortEventsByTimestamp = (
   events: EventData[],
-  ascending: boolean = true
+  ascending: boolean = true,
 ) => {
   return events.sort((a, b) =>
-    ascending ? a.timestamp - b.timestamp : b.timestamp - a.timestamp
+    ascending ? a.timestamp - b.timestamp : b.timestamp - a.timestamp,
   );
 };
 
