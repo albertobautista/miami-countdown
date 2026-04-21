@@ -19,15 +19,15 @@ const events: EventData[] = [
   //   colorClass: "text-yellow-600",
   //   people: ["alberto"],
   // },
-  {
-    id: "Euro-trip-alone",
-    title: "Euro Trip",
-    description: "Secret",
-    timestamp: 1771243200000,
-    backgroundImage: "/img/bg/sevilla.webp",
-    colorClass: "text-green-600",
-    people: ["alberto"],
-  },
+  // {
+  //   id: "Euro-trip-alone",
+  //   title: "Euro Trip",
+  //   description: "Secret",
+  //   timestamp: 1771243200000,
+  //   backgroundImage: "/img/bg/sevilla.webp",
+  //   colorClass: "text-green-600",
+  //   people: ["alberto"],
+  // },
   {
     id: "orlando-trip-2025",
     title: "Orlando-Disney",
@@ -54,6 +54,15 @@ const events: EventData[] = [
     backgroundImage: "/img/bg/alaska.webp",
     colorClass: "text-cyan-400",
     people: ["alberto", "mariel", "payan", "alan"],
+  },
+  {
+    id: "los-angeles-2026",
+    title: "Los Ángeles 2026",
+    description: "Los Angeles 2026",
+    timestamp: 1795615200000,
+    backgroundImage: "/img/bg/los-angeles.webp",
+    colorClass: "text-yellow-400",
+    people: ["alberto"],
   },
 ];
 
