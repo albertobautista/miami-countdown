@@ -41,9 +41,9 @@ const events: EventData[] = [
     id: "world-cup-2026",
     title: "World Cup 2026",
     description: "World Cup 2026",
-    timestamp: 1781157600000,
+    timestamp: 1781204400000,
     backgroundImage: "/img/bg/world-cup.webp",
-    colorClass: "text-orange-600",
+    colorClass: "text-lime-500",
     people: ["alberto"],
   },
   {
@@ -62,6 +62,15 @@ const events: EventData[] = [
     timestamp: 1795615200000,
     backgroundImage: "/img/bg/los-angeles.webp",
     colorClass: "text-yellow-400",
+    people: ["alberto"],
+  },
+  {
+    id: "euro-trip-2027",
+    title: "Euro Trip 2027",
+    description: "Euro Trip 2027",
+    timestamp: 1807071600000,
+    backgroundImage: "/img/bg/london.webp",
+    colorClass: "text-orange-400",
     people: ["alberto"],
   },
 ];
