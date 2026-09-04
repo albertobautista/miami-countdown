@@ -73,6 +73,15 @@ const events: EventData[] = [
     colorClass: "text-orange-400",
     people: ["alberto"],
   },
+  {
+    id: "miami-2026",
+    title: "Miami - Messi 🐐",
+    description: "Miami - Messi 🐐",
+    timestamp: 1791675000000,
+    backgroundImage: "/img/bg/messi.jpg",
+    colorClass: "text-pink-400",
+    people: ["alberto"],
+  },
 ];
 
 export const sortEventsByTimestamp = (
